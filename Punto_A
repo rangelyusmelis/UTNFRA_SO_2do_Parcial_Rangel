@@ -1,0 +1,75 @@
+ 624  sudo lsblk
+  625  sudo fdisk -l
+  626  sudo fdisk /dev/sdd
+  627  sudo fdisk /dev/sde
+  628  sudo fdisk -l
+  629  sudo fdisk /dev/sde
+  630  free -h 
+  631  sudo pvcreate /dev/sdd1
+  632  sudo pvcreate /dev/sde1
+  633  sudo vgcreate vg_datos /dev/sdd1
+  634  sudo vgcreate vg_temp /dev/sde1
+  635  sudo vgs 
+687  sudo vgs
+  688  sudo vgs
+  689  sudo lvcreate -L 1.45G -n lv_workareas vg_datos
+  690  sudo lvextend -l 100%FREE /dev/vg_temp/lv_swap
+  691  sudo lsblk
+  692  df .h
+  693  df -h
+  694  free -h
+  695  sudo lvextend -l 100%FREE /dev/vg_datos/lv_docker
+  696  sudo lvs
+  697  sudo lvcreate -L 1.45G -n lv_workareas vg_datos
+  698  sudo lvcreate -l 357 -n lv_workareas vg_datos
+  699  sudo lvs
+  700  sudo lvextend -l 100%FREE /dev/vg_temp/lv_swap
+  701  sudo vgdisplay
+  702  sudo lvs vg_temp
+  703  sudo vgextend vg_temp /dev/sde
+  704  sudo lvcreate -L 1G -n lv_swap vg_temp
+  705  sudo lvcreate -l 100%FREE -n lv_swap vg_temp
+  706  sudo lvs
+  707  sudo mkfs.ext4 /dev/vg_datos/lv_docker
+  708  sudo mkfs.ext4 /dev/vg_datos/lv_workareas
+  709  sudo lvs
+  710  sudo lvcreate -L 500M -n lv_docker vg_datos
+  711  sudo vgdisplay vg_datos
+  712  df -h
+  713  sudo resize2fs /dev/vg_datos/lv_workareas 900M
+  714  sudo lvreduce -L 900M /dev/vg_datos/lv_workarea
+  715  sudo vgdisplay vg_datos
+  716  sudo lvreduce -L 900M /dev/vg_datos/lv_workareas
+  717  sudo vgdisplay vg_datos
+  718  sudo lvcreate -L 500M -n lv_docker vg_datos
+   720  sudo mkfs.ext4 /dev/vg_datos/lv_docker
+  721  
+  722  sudo mount /dev/vg_datos/lv_docker /mnt/docker
+  723  df -h
+  724  sudo vim /etc/fstab
+  725  sudo nano /etc/fstab
+ 
+  727  sudo vgs 
+  728  df -h
+  729  sudo mount /dev/vg_datos/lv_workareas /work
+  732  ls -l
+  733  cd /home/osboxes
+  734  ls -l
+  735  ls -l /mnt
+  736  cd mnt
+  737  cd /mnt
+  738  pwd
+  739  sudo mv /mnt/docker /var/lib/
+  740  cd..
+ 
+  742  sudo mv /mnt/docker /var/lib/
+  743  sudo umount /mnt/docker
+  745  sudo mount /dev/vg_datos/lv_docker /var/lib/docker
+   751  sudo mount /dev/vg_datos/lv_docker /var/lib/docker
+  752  sudo systemctl daemon-reload
+  753  sudo mount /dev/vg_datos/lv_docker /var/lib/docker
+  754  df -h
+  755  mkdir -p /work
+  756  sudo mkdir -p /work
+  757  sudo mount /dev/vg_datos/lv_workareas /work
+    768  lsblk
