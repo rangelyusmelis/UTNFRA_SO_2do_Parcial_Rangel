@@ -1,0 +1,2 @@
+#! comando punto A
+#
