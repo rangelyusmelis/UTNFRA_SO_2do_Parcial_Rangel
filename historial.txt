@@ -1,0 +1,113 @@
+    1  e https://github.com/upszot/UTN-FRA_SO_Examenes.git
+    2  git clone https://github.com/upszot/UTN-FRA_SO_Examenes.git
+    3  ./UTN-FRA_SO_Examenes/202406/script_Precondicion.sh
+    4  exit
+    5  [200~
+    6  ./UTN-FRA_SO_Examenes/202406/script_Precondicion.sh
+    7  ~/.bashrc  && history -a
+    8  sudo ~/.bashrc  && history -a
+    9  source ~/.bashrc
+   10  history -a
+   11  ls -la
+   12  ssh-keygen -t ed25519 # genero la llave publica
+   13  ls -la
+   14  cd .ssh
+   15  cat id_ed25519.pub
+   16  pwd
+   17  git remote add origin https://github.com/usuario/repositorio.git
+   18  cd
+   19  cd UTN-FRA_SO_Examenes/
+   20  ls -la
+   21  202406
+   22  LS -L
+   23  CD 202406
+   24  cd
+   25  ls -la
+   26  cd RTA_Examen_20241130/
+   27  git init
+   28  git branch -m main
+   29  git checkout -b main origin/main
+   30  git fetch --all
+   31  git branch -r
+   32  git add .
+   33  git status
+   34  git commit -m mi primer commit
+   35  git commit -m "mi primer commit"
+   36  git config --global user.email "ryusmeis23@gmail.com"
+   37  git config --global user.name "rangelyusmelis"
+   38  git commit -m "mi primer commit"
+   39  git remote add origin git@github.com:rangelyusmelis/UTNFRA_SO_2do_Parcial_Rangel.git
+   40  git pull origin main --allow-unrelated-histories
+   41  git config --global pull.rebase false  # o true si prefieres rebase
+   42  git push
+   43  ls -la
+   44  cd RTA_Examen_20241130/
+   45  LS -LA
+   46  la -la
+   47  git status
+   48  git add .
+   49  git commit  -m " mi primer commit"
+   50  git pull
+   51  git branch --set-upstream-to=origin/main main
+   52  git pull
+   53  git pull origin main --allow-unrelated-histories
+   54  git push origin main
+   55  fdisk -l
+   56  sudo fdisk -l
+   57  sudo fdisk /dev/sdc
+   58  sudo fdisk /dev/sdd
+   59  lblsk
+   60  lblk
+   61  lsblk
+   62  free -h
+   63  sudo wipefs -a /dev/sdc1 /dev/sdd1 /dev/sdd2
+   64  cd
+   65  lsblk
+   66  sudo pv create /dev/sdc1 /dev/sdd1 /dev/sdd2
+   67  sudo pvcreate /dev/sdc1 /dev/sdd1 /dev/sdd2
+   68  sudo pvs
+   69  sudo vgcreate vg_datos dev/sdc1
+   70  sudo vgcreate vg_datos /dev/sdc1
+   71  sudo vgcreate vg_datos /dev/sdd1 /dev/sdd2
+   72  sudo vgcreate vg_temp /dev/sdd1 /dev/sdd2
+   73  sudo pvs
+   74  sudo vgs
+   75  sudo lvcreate -L 5M vg_datos -n lv_docker
+   76  sudo lvcreate -L 1.5G vg_datos -n lv_workareas
+   77  sudo lvcreate -L 512M vg_temp -n lv_swap
+   78  sudo lvs
+   79  sudo vgs
+   80  fdisk -l
+   81  sudo fdisk -l
+   82  sudo mkfs Disk /dev/mapper/vg_temp-lv_swap
+   83  sudo mkswap /dev/mapper/vg_temp-lv_swap
+   84  sudo swapon /dev/mapper/vg_temp-lv_swap
+   85  swapon -s
+   86  free -h
+   87  sudo mkfs -t ext Disk /dev/mapper/vg_datos-lv_docker
+   88  sudo mkfs -t ext4 /dev/mapper/vg_datos-lv_docker
+   89  sudo mkfs -t ext4 /dev/mapper/vg_datos-lv_workareas:
+   90  sudo mkfs -t ext4 /dev/mapper/vg_datos-lv_workareas
+   91  sudo lsblk -f
+   92  ls -l /var/lib/docker
+   93  sudo apt update  #actualizar paquete
+   94  sudo apt install ansible # instala el ansible
+   95  sudo apt list  --installed | grep ansible 
+   96  for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+   97  #configura el repositorio docker:
+   98  # Add Docker's official GPG key:
+   99  sudo apt-get update
+  100  sudo apt-get install ca-certificates curl
+  101  sudo install -m 0755 -d /etc/apt/keyrings
+  102  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+  103  sudo chmod a+r /etc/apt/keyrings/docker.asc
+  104  # Add the repository to Apt sources:
+  105  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  106    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  107  sudo apt-get update
+  108  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  109  sudo docker run hello-world
+  110  sudo usermod -a -G docker $(whoami)
+  111  ls -la
+  112  cd RTA_Examen_20241130/
+  113  history >> historial.txt
