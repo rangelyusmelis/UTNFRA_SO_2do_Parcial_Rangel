@@ -1,0 +1,61 @@
+---
+# tasks file for role_01
+
+- debug:
+    msg: "carpetas anidas "1
+ 
+
+---
+- hosts: all
+
+  tasks:
+    - include_role:
+        name: 2do_parcial
+    
+    - name: "Otra tarea"
+      debug:
+        msg: "Despues de la ejecucion del rol"
+
+    - name: Crear estructura de directorios anidada
+    hosts: all
+    become: yes
+    tasks:
+      - name: Crear carpeta principal y estructura anidada
+      file:
+        path: "{{ item }}"
+        state: directory
+        mode: '0755'
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+      loop:
+        - /home/yusmelis/UTN-FRA_SO_EXamenes/202406/ansible/tmp
+        - /home/yusmelis/UTN-FRA_SO_EXamenes/202406/ansible/tmp/2do_parcial
+        - /home/yusmelis/UTN-FRA_SO_EXamenes/202406/ansible/tmp/2do_parcial/alumno
+        - //home/yusmelis/UTN-FRA_SO_EXamenes/202406/ansible/tmp/equipo
+
+
+
+      - name: Crear dos archivos con contenido estático
+        hosts: all
+        become: yes
+        tasks:
+          - name: Crear primer archivo con contenido
+            ansible.builtin.copy:
+              dest: /home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/tmp/2do_parcial/alumno/alumno.txt    
+              content: |
+                 "Nombre: Yusmelis Apellido: Rangel
+                   Division: 311."
+
+      - name: Crear dos archivos con contenido estático
+        hosts: all
+        become: yes
+        tasks:
+          - name: Crear primer archivo con contenido
+            ansible.builtin.copy:
+              dest: /home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/tmp/2do_parcial/equipo/equipo.txt
+              
+              content: |
+                " ip:192.168.56.3
+                  distribucion: linux -Debian
+                  cantgidad de cores 4"
+

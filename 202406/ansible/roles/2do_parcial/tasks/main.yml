@@ -1,0 +1,52 @@
+# Archivo main.yml para el rol 2do_parcial
+
+- name: Crear carpeta principal y estructura anidada
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0755'
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+  loop:
+    - /home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/tmp
+    - /home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/tmp/2do_parcial
+    - /home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/tmp/2do_parcial/alumno
+    - /home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/tmp/equipo
+
+- name: Crear archivo alumno.txt con contenido
+  ansible.builtin.copy:
+    dest: /home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/tmp/2do_parcial/alumno/alumno.txt
+    content: |
+      Nombre: Yusmelis
+      Apellido: Rangel
+      División: 311.
+
+- name: Crear archivo equipo.txt con contenido
+  ansible.builtin.copy:
+    dest: /home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/tmp/2do_parcial/equipo/equipo.txt
+    content: |
+      ip: 192.168.56.3
+      distribución: Linux - Debian
+      cantidad de cores: 4
+
+- name: Crear grupos
+  ansible.builtin.group:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - 2PSupervisores
+
+
+- name: Crear usuario 'usuario3' con directorio home
+  ansible.builtin.user:
+    name: usuario3
+    create_home: yes
+    groups: 2PSupervisores
+
+- name: Agregar NOPASSWD para grupo '2PSupervisores' en sudoers
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers.d/2PSupervisores
+    state: present
+    line: '%2PSupervisores ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'
+

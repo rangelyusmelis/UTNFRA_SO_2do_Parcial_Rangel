@@ -1,0 +1,102 @@
+2024-06-24 18:08:06,499 p=3444395 u=upszot n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-06-24 18:08:06,598 p=3444395 u=upszot n=ansible | PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:06,609 p=3444395 u=upszot n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,746 p=3444395 u=upszot n=ansible | ok: [localhost]
+2024-06-24 18:08:07,775 p=3444395 u=upszot n=ansible | TASK [include_role : 2do_parcial] ***********************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,805 p=3444395 u=upszot n=ansible | TASK [2do_parcial : debug] ******************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,817 p=3444395 u=upszot n=ansible | ok: [localhost] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-06-24 18:08:07,836 p=3444395 u=upszot n=ansible | TASK [Otra tarea] ***************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,851 p=3444395 u=upszot n=ansible | ok: [localhost] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-03 13:00:59,620 p=13521 u=yusmelis n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  could not find expected ':'
+
+The error appears to be in '/home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml': line 4, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  become:yes
+  tasks:
+  ^ here
+
+2024-12-03 13:51:32,008 p=13623 u=yusmelis n=ansible | PLAY [all] *******************************************************************************************************************************************************************************************************
+2024-12-03 13:51:32,069 p=13623 u=yusmelis n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+2024-12-03 13:51:32,656 p=13623 u=yusmelis n=ansible | fatal: [192.168.56.3]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '192.168.56.3' (ED25519) to the list of known hosts.\r\nyusmelis@192.168.56.3: Permission denied (publickey,password).", "unreachable": true}
+2024-12-03 13:51:33,795 p=13623 u=yusmelis n=ansible | fatal: [localhost]: FAILED! => {"ansible_facts": {}, "changed": false, "failed_modules": {"ansible.legacy.setup": {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"}, "failed": true, "module_stderr": "sudo: a password is required\n", "module_stdout": "", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}}, "msg": "The following modules failed to execute: ansible.legacy.setup\n"}
+2024-12-03 13:51:33,802 p=13623 u=yusmelis n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2024-12-03 13:51:33,804 p=13623 u=yusmelis n=ansible | 192.168.56.3               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-03 13:51:33,804 p=13623 u=yusmelis n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-03 13:56:44,055 p=13696 u=yusmelis n=ansible | PLAY [all] *******************************************************************************************************************************************************************************************************
+2024-12-03 13:56:44,074 p=13696 u=yusmelis n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+2024-12-03 13:56:44,192 p=13696 u=yusmelis n=ansible | fatal: [127.0.0.1.]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname 127.0.0.1.: Name or service not known", "unreachable": true}
+2024-12-03 13:56:44,770 p=13696 u=yusmelis n=ansible | fatal: [localhost]: FAILED! => {"ansible_facts": {}, "changed": false, "failed_modules": {"ansible.legacy.setup": {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"}, "failed": true, "module_stderr": "sudo: a password is required\n", "module_stdout": "", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}}, "msg": "The following modules failed to execute: ansible.legacy.setup\n"}
+2024-12-03 13:56:44,772 p=13696 u=yusmelis n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2024-12-03 13:56:44,772 p=13696 u=yusmelis n=ansible | 127.0.0.1.                 : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-03 13:56:44,772 p=13696 u=yusmelis n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-03 14:05:52,237 p=13772 u=yusmelis n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-12-03 14:05:52,569 p=13772 u=yusmelis n=ansible | PLAY [all] *******************************************************************************************************************************************************************************************************
+2024-12-03 14:05:52,593 p=13772 u=yusmelis n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+2024-12-03 14:05:53,503 p=13772 u=yusmelis n=ansible | fatal: [127.0.0.1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '127.0.0.1' (ED25519) to the list of known hosts.\r\nyusmelis@127.0.0.1: Permission denied (publickey,password).", "unreachable": true}
+2024-12-03 14:05:53,675 p=13772 u=yusmelis n=ansible | fatal: [localhost]: FAILED! => {"ansible_facts": {}, "changed": false, "failed_modules": {"ansible.legacy.setup": {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"}, "failed": true, "module_stderr": "sudo: a password is required\n", "module_stdout": "", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}}, "msg": "The following modules failed to execute: ansible.legacy.setup\n"}
+2024-12-03 14:05:53,679 p=13772 u=yusmelis n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2024-12-03 14:05:53,679 p=13772 u=yusmelis n=ansible | 127.0.0.1                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-03 14:05:53,680 p=13772 u=yusmelis n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-03 14:06:41,204 p=13816 u=root n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-12-03 14:06:41,402 p=13816 u=root n=ansible | PLAY [all] *******************************************************************************************************************************************************************************************************
+2024-12-03 14:06:41,413 p=13816 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+2024-12-03 14:06:41,802 p=13816 u=root n=ansible | fatal: [127.0.0.1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '127.0.0.1' (ED25519) to the list of known hosts.\r\nroot@127.0.0.1: Permission denied (publickey,password).", "unreachable": true}
+2024-12-03 14:06:44,406 p=13816 u=root n=ansible | ok: [localhost]
+2024-12-03 14:06:44,441 p=13816 u=root n=ansible | TASK [include_role : 2do_parcial] ********************************************************************************************************************************************************************************
+2024-12-03 14:06:44,518 p=13816 u=root n=ansible | TASK [2do_parcial : Crear carpeta principal y estructura anidada] ************************************************************************************************************************************************
+2024-12-03 14:06:44,629 p=13816 u=root n=ansible | fatal: [localhost]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_user' is undefined\n\nThe error appears to be in '/home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/tasks/main.yml': line 3, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Crear carpeta principal y estructura anidada\n  ^ here\n"}
+2024-12-03 14:06:44,633 p=13816 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2024-12-03 14:06:44,634 p=13816 u=root n=ansible | 127.0.0.1                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-03 14:06:44,636 p=13816 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-03 14:20:19,969 p=13990 u=yusmelis n=ansible | [WARNING]:  * Failed to parse /home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/inventory/hosts with yaml plugin: We were unable to read either as JSON nor YAML, these are the errors we got from each: JSON:
+Expecting value: line 1 column 2 (char 1)  Syntax Error while loading YAML.   did not find expected <document start>  The error appears to be in '/home/yusmelis/UTN-
+FRA_SO_Examenes/202406/ansible/inventory/hosts': line 3, column 1, but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:   localhost ansible_host=127.0.0.1
+ansible_user=yusmelis ^ here
+
+2024-12-03 14:20:19,971 p=13990 u=yusmelis n=ansible | [WARNING]:  * Failed to parse /home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/inventory/hosts with ini plugin: /home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/inventory/hosts:3: Expected group name, got:
+localhost ansible_host=127.0.0.1 ansible_user=yusmelis
+
+2024-12-03 14:20:19,973 p=13990 u=yusmelis n=ansible | [WARNING]: Unable to parse /home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/inventory/hosts as an inventory source
+
+2024-12-03 14:20:19,973 p=13990 u=yusmelis n=ansible | [WARNING]: Unable to parse /home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/inventory as an inventory source
+
+2024-12-03 14:20:19,974 p=13990 u=yusmelis n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2024-12-03 14:20:19,983 p=13990 u=yusmelis n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2024-12-03 14:20:20,402 p=13990 u=yusmelis n=ansible | PLAY [all] *******************************************************************************************************************************************************************************************************
+2024-12-03 14:20:20,404 p=13990 u=yusmelis n=ansible | skipping: no hosts matched
+2024-12-03 14:20:20,405 p=13990 u=yusmelis n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2024-12-03 15:30:34,333 p=14518 u=yusmelis n=ansible | PLAY [all] *******************************************************************************************************************************************************************************************************
+2024-12-03 15:30:34,360 p=14518 u=yusmelis n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+2024-12-03 15:30:34,589 p=14518 u=yusmelis n=ansible | fatal: [192.168.56.3]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '192.168.56.3' (ED25519) to the list of known hosts.\r\nno such identity: /path/to/your/private/key: No such file or directory\r\nvagrant@192.168.56.3: Permission denied (publickey,password).", "unreachable": true}
+2024-12-03 15:30:35,335 p=14518 u=yusmelis n=ansible | fatal: [localhost]: FAILED! => {"ansible_facts": {}, "changed": false, "failed_modules": {"ansible.legacy.setup": {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python3"}, "failed": true, "module_stderr": "sudo: a password is required\n", "module_stdout": "", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}}, "msg": "The following modules failed to execute: ansible.legacy.setup\n"}
+2024-12-03 15:30:35,339 p=14518 u=yusmelis n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2024-12-03 15:30:35,340 p=14518 u=yusmelis n=ansible | 192.168.56.3               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-03 15:30:35,340 p=14518 u=yusmelis n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-03 15:31:12,528 p=14562 u=root n=ansible | PLAY [all] *******************************************************************************************************************************************************************************************************
+2024-12-03 15:31:12,545 p=14562 u=root n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+2024-12-03 15:31:13,025 p=14562 u=root n=ansible | fatal: [192.168.56.3]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '192.168.56.3' (ED25519) to the list of known hosts.\r\nno such identity: /path/to/your/private/key: No such file or directory\r\nvagrant@192.168.56.3: Permission denied (publickey,password).", "unreachable": true}
+2024-12-03 15:31:15,720 p=14562 u=root n=ansible | ok: [localhost]
+2024-12-03 15:31:15,741 p=14562 u=root n=ansible | TASK [include_role : 2do_parcial] ********************************************************************************************************************************************************************************
+2024-12-03 15:31:15,796 p=14562 u=root n=ansible | TASK [2do_parcial : Crear carpeta principal y estructura anidada] ************************************************************************************************************************************************
+2024-12-03 15:31:15,859 p=14562 u=root n=ansible | fatal: [localhost]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_user' is undefined\n\nThe error appears to be in '/home/yusmelis/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/tasks/main.yml': line 3, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Crear carpeta principal y estructura anidada\n  ^ here\n"}
+2024-12-03 15:31:15,865 p=14562 u=root n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2024-12-03 15:31:15,866 p=14562 u=root n=ansible | 192.168.56.3               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-03 15:31:15,867 p=14562 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
